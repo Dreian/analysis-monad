@@ -1,0 +1,69 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           analysis-monad
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/analysis-monad#readme>
+homepage:       https://github.com/githubuser/analysis-monad#readme
+bug-reports:    https://github.com/githubuser/analysis-monad/issues
+author:         Andrej Ivašković
+maintainer:     dreian95@gmail.com
+copyright:      2021 Andrej Ivašković
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/analysis-monad
+
+library
+  exposed-modules:
+      Control.Graded
+      Control.Graded.GradedState
+      Control.Graded.Identity
+      Control.Graded.Maybe
+      Control.Graded.Monad
+      Control.Graded.PermState
+      Control.Graded.Trans
+      Control.Graded.Trans.Identity
+      Control.Graded.Trans.Maybe
+      Control.Graded.Trans.PermState
+  other-modules:
+      Paths_analysis_monad
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable analysis-monad-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_analysis_monad
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      analysis-monad
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite analysis-monad-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_analysis_monad
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      analysis-monad
+    , base >=4.7 && <5
+  default-language: Haskell2010
