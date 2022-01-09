@@ -129,7 +129,7 @@ class Paddable (m :: Nat) (n :: Nat) where
 instance Paddable n n where
   padExt v = v
 instance Paddable (Succ m) n => Paddable m n where
-  padExt v = padExt (Ext v)
+  padExt (Ext v) = padExt v
 
 instance Subeffect (HistState s) r r where
   sub = id
